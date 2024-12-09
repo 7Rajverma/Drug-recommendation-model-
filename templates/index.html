@@ -7,260 +7,379 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
 
-  <style>
+  <style>    /* Default (Night Mode) */
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    .navbar-dark {
+      background-color: #333333 !important;
+      transition: background-color 0.5s;
+    }
+    .btn-toggle {
+      border: none;
+      background: none;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: color 0.3s;
+    }
+    .btn-toggle:hover {
+      color: #00d9a5;
+    }
 
-        .logo {
-            width: 50px;
-            height: 50px;
-            color: black;
-            margin-top: 0;
-            margin-left: 2px;
-        }
+    /* Day Mode */
+    body.day-mode {
+      background-color: #f8f9fa;
+      color: #000000;
+    }
+    .navbar-dark.day-mode {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      border-bottom: 2px solid #eeeeee;
+    }
+    .navbar-dark.day-mode .nav-link {
+      color: #000000 !important;
+    }
+    .navbar-dark.day-mode .nav-link:hover {
+      color: #00d9a5 !important;
+    }
+    .navbar-dark.day-mode .navbar-brand {
+      color: #000000 !important;
+    }
+    .btn-toggle.day-mode {
+      color: #000000;
+    }
+    .btn-toggle.day-mode:hover {
+      color: #00d9a5;
+    }
 
-        .myimg {
-            width: 50px;
-            height: 50px;
-            border: 2px solid black;
-            border-radius: 25px;
-        }
+    /* Form and Result Section Styling */
+    .container-form, .result-container {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.5s;
+    }
+    .container-form.day-mode, .result-container.day-mode {
+      background-color: #ffffff;
+    }
+    .text-green {
+      color: #00d9a5;
+    }
+    .btn-custom {
+      background-color: #00d9a5;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #007b67;
+    }
+    .toggle-button {
+      display: inline-block;
+      background-color: #00d9a5;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 10px 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .toggle-button:hover {
+      background-color: #007b67;
+      transform: scale(1.05);
+    }
+    .toggle-button:focus {
+      outline: none;
+      box-shadow: 0 0 5px #00d9a5;
+    }
+<!--    # _______________________________________________________________________________________________NAV BAR_______________-->
 
+    /* Additional styling for responsiveness and attractiveness */
+    .form-container {
+      background-color: #343a40;
+      color: white;
+      border-radius: 15px;
+      padding: 40px;
+    }
 
+    .btn-custom {
+      border-radius: 20px;
+      padding: 10px 20px;
+    }
 
+    .result-container {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-    </style>
-</head>
-<body>
+    .modal-header {
+      background-color: #020606;
+      color: white;
+    }
+
+    .modal-body {
+      background-color: #2e2e2e;
+      color: white;
+    }
+
+    .modal-content {
+      border-radius: 15px;
+    }
+
+    .toggle-button {
+      margin: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 140px;
+      border-radius: 5px;
+      background-color: #f39334;
+      color: black;
+    }
+
+    .toggle-button:hover {
+      background-color: #00d9a5;
+    }
+
+    .btn-danger {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 5px;
+    }
+
+    .container-form {
+      margin-top: 50px;
+    }
+
+    .text-center {
+      margin-top: 30px;
+    }
+  </style>
+
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <!-- Logo at the top-left corner -->
-            <div class="logo">
-                <img class="myimg" src="{{ url_for('static', filename='logo.png') }}" alt="">
-            </div>
-
-            <a class="navbar-brand" href="#">Health Center</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/developer">Developer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blog</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="logo me-2">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white;">
         </div>
-    </nav>
+        Health Center
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/developer">Developer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">Blog</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button id="modeToggle" class="btn-toggle ms-3" title="Toggle Day/Night Mode">&#9788;</button>
+      </div>
+    </div>
+  </nav>
 
-
-
-
-<!-- main form of page -->
-<h1 class="mt-4 my-4 text-center text-green">Health Care Center</h1>
-<div class="container my-4 mt-4" style="background: black; color: white; border-radius: 15px; padding: 40px;">
+    <!-- Main form of page -->
+<div class="container container-form">
+    <h1 class="text-center text-green">Health Care Center</h1>
     <form action="/predict" method="post">
-        <div class="form-group">
-            <label for="symptoms">Select Symptoms:</label>
-            <input type="text" class="form-control", id="symptoms" name="symptoms" placeholder="type systems such as itching, sleeping, aching etc">
-
-        </div>
-        <br>
-        <button type="button" id="startSpeechRecognition" class="btn btn-primary" style="margin-left:3px;border:1px solid white; border-radius:20px;">
+      <div class="mb-3">
+        <label for="symptoms" class="form-label">Select Symptoms:</label>
+        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="Type symptoms such as itching, sleeping, aching, etc.">
+      </div>
+<button type="button" id="startSpeechRecognition" class="btn btn-primary btn-custom">
             Start Speech Recognition
-        </button>
-        <br>
-
-        <!-- Display the transcribed text here -->
-        <div name="mysysms" id="transcription"></div>
-
-        {% if message %}
+          </button>      <div id="transcription" class="mt-3"></div>
+      {% if message %}
         <p>{{ message }}</p>
-        {% endif %}
-        <br>
-
-        <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 14px; margin-bottom: 5px;">Predict</button>
+      {% endif %}
+      <button type="submit" class="btn btn-danger btn-lg mt-3">Predict</button>
     </form>
-</div>
+  </div>
 
+    {% if predicted_disease %}
+      <!-- Results -->
+      <h1 class="text-center my-4">Our AI System Results</h1>
+  <div class="container result-container">
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#diseaseModal">Disease</button>
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#descriptionModal">Description</button>
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#precautionModal">Precaution</button>
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#medicationsModal">Medications</button>
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#workoutsModal">Workouts</button>
+    <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#dietsModal">Diets</button>
+  </div>
+    {% endif %}
 
-
-
-
-
-
-
-{% if predicted_disease %}
-
-<!-- Results -->
-<h1 class="text-center my-4 mt-4">Our AI System Results</h1>
-<div class="container">
-
-    <div class="result-container">
-        <!-- Buttons to toggle display -->
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#diseaseModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Disease</button>
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#descriptionModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#268AF3 ;color:black;">Description</button>
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#precautionModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F371F9 ;color:black;">Precaution</button>
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#medicationsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px;border-radius:5px; background:#F8576F ;color:black;">Medications</button>
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#workoutsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#99F741 ;color:black;">Workouts</button>
-        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#dietsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#E5E23D;color:black;">Diets</button>
-    </div>
-</div>
-
-{% endif %}
-
-<!-- Disease Modal -->
+    <!-- Disease Modal -->
     <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;"> <!-- Set header background color inline -->
-                    <h5 class="modal-title" id="diseaseModalLabel">Predicted Disease</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" style="background-color: #modal-body-color;"> <!-- Set modal body background color inline -->
-                    <p>{{ predicted_disease }}</p>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="diseaseModalLabel">Predicted Disease</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>{{ predicted_disease }}</p>
+          </div>
         </div>
+      </div>
     </div>
-
 
     <!-- Description Modal -->
     <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
-                    <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>{{ dis_des }}</p>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>{{ dis_des }}</p>
+          </div>
         </div>
+      </div>
     </div>
 
-<!-- Precaution Modal -->
+    <!-- Precaution Modal -->
     <div class="modal fade" id="precautionModal" tabindex="-1" aria-labelledby="precautionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
-                    <h5 class="modal-title" id="precautionModalLabel">Precaution</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        {% for i in my_precautions %}
-                            <li>{{ i }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="precautionModalLabel">Precaution</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in my_precautions %}
+                <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-
-
-
 
     <!-- Medications Modal -->
     <div class="modal fade" id="medicationsModal" tabindex="-1" aria-labelledby="medicationsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
-                    <h5 class="modal-title" id="medicationsModalLabel">Medications</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        {% for i in medications %}
-                            <li>{{ i }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="medicationsModalLabel">Medications</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in medications %}
+                <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Workouts Modal -->
     <div class="modal fade" id="workoutsModal" tabindex="-1" aria-labelledby="workoutsModalLabel" aria-hidden="true">
-        <div class="modal-dialog" >
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
-                    <h5 class="modal-title" id="workoutsModalLabel">Workouts</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        {% for i in workout %}
-                            <li>{{ i }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+          <h5 class="modal-title" id="workoutsModalLabel">Workouts</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
-
-    <!-- Diets Modal -->
-    <div class="modal fade" id="dietsModal" tabindex="-1" aria-labelledby="dietsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
-                    <h5 class="modal-title" id="dietsModalLabel">Diets</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        {% for i in my_diet %}
-                            <li>{{ i }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+        <div class="modal-body">
+          <ul>
+            {% for i in workout %}
+              <li>{{ i }}</li>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 
+  <!-- Diets Modal -->
+  <div class="modal fade" id="dietsModal" tabindex="-1" aria-labelledby="dietsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dietsModalLabel">Diets</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            {% for i in my_diet %}
+              <li>{{ i }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
+ <script>
+      const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
+      const transcriptionDiv = document.getElementById('transcription');
 
-        <script>
-    const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
-    const transcriptionDiv = document.getElementById('transcription');
+      startSpeechRecognitionButton.addEventListener('click', startSpeechRecognition);
 
-    startSpeechRecognitionButton.addEventListener('click', startSpeechRecognition);
+      function startSpeechRecognition() {
+          const recognition = new webkitSpeechRecognition(); // Use webkitSpeechRecognition for compatibility
+          recognition.lang = 'en-US'; // Set the language for recognition
 
-    function startSpeechRecognition() {
-        const recognition = new webkitSpeechRecognition(); // Use webkitSpeechRecognition for compatibility
+          recognition.onresult = function (event) {
+              const result = event.results[0][0].transcript;
+              transcriptionDiv.textContent = result;
+          };
 
-        recognition.lang = 'en-US'; // Set the language for recognition
+          recognition.onend = function () {
+              console.log('Speech recognition ended.');
+          };
 
-        recognition.onresult = function (event) {
-            const result = event.results[0][0].transcript;
-            transcriptionDiv.textContent = result;
-        };
+          recognition.start();
+      }
+    </script>
 
-        recognition.onend = function () {
-            console.log('Speech recognition ended.');
-        };
+<!--  #______________________________________________________________NAV bar____________________________________-->
+ <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const body = document.body;
+    const navbar = document.querySelector('.navbar');
+    const formContainer = document.querySelector('.container-form');
+    const resultContainer = document.querySelector('.result-container');
 
-        recognition.start();
-    }
-</script>
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('day-mode');
+      navbar.classList.toggle('day-mode');
+      formContainer.classList.toggle('day-mode');
+      resultContainer.classList.toggle('day-mode');
+      modeToggle.classList.toggle('day-mode');
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      // Change icon between sun and moon
+      modeToggle.innerHTML = body.classList.contains('day-mode') ? '&#9789;' : '&#9788;';
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
+
+
