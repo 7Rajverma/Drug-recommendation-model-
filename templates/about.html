@@ -3,45 +3,345 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>About Us & Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+      .hero {
+        background: linear-gradient(to right, #007bff, #00b4d8);
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      .section-title {
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .section-bg {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+      }
+      .social-icons a {
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .social-icons a:hover {
+        color: #0056b3;
+      }
+    </style>
   </head>
   <body>
-    <div class="container my-4 mt-4">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">YourWebsite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#about-us">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-
-     <h3> About Us</h3>
-
-<p>Welcome to Medical Health center, where health meets technology for a brighter, healthier future.
-</p>
-<h3>Our Vision</h3>
-
-<p>We envision a world where access to healthcare information is not just a luxury but a fundamental right. Our journey began with a simple yet powerful idea: to empower individuals with the knowledge and tools they need to take control of their health.
-</p>
-<h3>Who We Are
-</h3>
-<p>We are a passionate team of healthcare professionals, data scientists, and technology enthusiasts who share a common goal: to make healthcare accessible, understandable, and personalized for you. With years of experience in both healthcare and cutting-edge technology, we've come together to create this platform as a testament to our commitment to your well-being.
-</p>
-<h3>Our Mission</h3>
-
-<p>At this website, our mission is to provide you with a seamless and intuitive platform that leverages the power of artificial intelligence and machine learning. We want to assist you in identifying potential health concerns based on your reported symptoms, all while offering a wealth of educational resources to enhance your health literacy.
-</p>
-<h3>How We Do It</h3>
-
-<p>Our platform utilizes a robust machine learning model trained on a vast dataset of symptoms and diseases. By inputting your symptoms, our system generates accurate predictions about potential illnesses, allowing you to make informed decisions about your health.
-</p>
-<h3>Your Well-being, Our Priority</h3>
-
-<p>Your health is our top priority. We understand that navigating the complexities of healthcare can be daunting. That's why we've gone the extra mile to provide not only accurate predictions but also comprehensive information about each disease. You'll find descriptions, recommended precautions, medications, dietary advice, and workout tips to support your journey to better health.
-</p>
-<h3>Join Us on this Journey
-</h3>
-<p>We invite you to explore our platform, engage with our educational content, and take control of your health journey. Together, we can revolutionize the way individuals access and understand healthcare information.
-</p>
-<p>Thank you for choosing [Your Website Name] as your trusted health companion. We are here to empower you with knowledge, support, and a brighter, healthier future.
-</p>
-
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="container">
+        <h1>Welcome to Our Platform</h1>
+        <p class="mt-3">Empowering health through technology.</p>
+      </div>
     </div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="section-bg">
+      <div class="container">
+        <div class="section-title">About Us</div>
+        <p>Welcome to Medical Health Center, where health meets technology for a brighter, healthier future.</p>
+        <h4>Our Vision</h4>
+        <p>We envision a world where access to healthcare information is not just a luxury but a fundamental right.</p>
+        <h4>Who We Are</h4>
+        <p>We are a passionate team of healthcare professionals, data scientists, and technology enthusiasts committed to making healthcare accessible and personalized.</p>
+        <h4>Our Mission</h4>
+        <p>Our mission is to provide a seamless platform using artificial intelligence to help identify potential health concerns and offer educational resources to enhance health literacy.</p>
+        <h4>How We Do It</h4>
+        <p>We utilize robust machine learning models trained on extensive datasets to generate accurate health predictions based on your symptoms.</p>
+        <h4>Your Well-being, Our Priority</h4>
+        <p>We provide comprehensive information about diseases, including precautions, medications, dietary advice, and workout tips.</p>
+        <h4>Join Us on this Journey</h4>
+        <p>Explore our platform, engage with our content, and take control of your health. Together, we can revolutionize healthcare information accessibility.</p>
+      </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" class="container my-5">
+      <div class="section-title">Contact Us</div>
+      <div class="row gy-4">
+        <!-- Customer Support -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title">Customer Support</h4>
+              <p>Our dedicated team is here to assist with any inquiries or issues you may have.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title">Get in Touch</h4>
+              <p><b>Email:</b> junaidmehsuud035@gmail.com</p>
+              <p><b>Phone:</b> 03477155035</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stay Connected -->
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title">Stay Connected</h4>
+              <p>Follow us on social media for the latest updates.</p>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title">Location</h4>
+              <p>Dera Ismail Khan, KPK, Pakistan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--  <title>Health Care Center</title>-->
+<!--  <style>-->
+<!--    /* Default (Night Mode) */-->
+<!--    body {-->
+<!--      background-color: #121212;-->
+<!--      color: #ffffff;-->
+<!--      transition: background-color 0.5s, color 0.5s;-->
+<!--    }-->
+<!--    .navbar-dark {-->
+<!--      background-color: #333333 !important;-->
+<!--      transition: background-color 0.5s;-->
+<!--    }-->
+<!--    .btn-toggle {-->
+<!--      border: none;-->
+<!--      background: none;-->
+<!--      color: #ffffff;-->
+<!--      cursor: pointer;-->
+<!--      font-size: 1.25rem;-->
+<!--      transition: color 0.3s;-->
+<!--    }-->
+<!--    .btn-toggle:hover {-->
+<!--      color: #00d9a5;-->
+<!--    }-->
+
+<!--    /* Day Mode */-->
+<!--    body.day-mode {-->
+<!--      background-color: #f8f9fa;-->
+<!--      color: #000000;-->
+<!--    }-->
+<!--    .navbar-dark.day-mode {-->
+<!--      background-color: #ffffff !important;-->
+<!--      color: #000000 !important;-->
+<!--      border-bottom: 2px solid #eeeeee;-->
+<!--    }-->
+<!--    .navbar-dark.day-mode .nav-link {-->
+<!--      color: #000000 !important;-->
+<!--    }-->
+<!--    .navbar-dark.day-mode .nav-link:hover {-->
+<!--      color: #00d9a5 !important;-->
+<!--    }-->
+<!--    .navbar-dark.day-mode .navbar-brand {-->
+<!--      color: #000000 !important;-->
+<!--    }-->
+<!--    .btn-toggle.day-mode {-->
+<!--      color: #000000;-->
+<!--    }-->
+<!--    .btn-toggle.day-mode:hover {-->
+<!--      color: #00d9a5;-->
+<!--    }-->
+
+<!--    /* Form Styling */-->
+<!--    .container-form {-->
+<!--      margin-top: 50px;-->
+<!--      padding: 20px;-->
+<!--      background-color: #2a2a2a;-->
+<!--      border-radius: 10px;-->
+<!--      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
+<!--      transition: background-color 0.5s;-->
+<!--    }-->
+<!--    .container-form.day-mode {-->
+<!--      background-color: #ffffff;-->
+<!--    }-->
+<!--    .text-green {-->
+<!--      color: #00d9a5;-->
+<!--    }-->
+<!--    .btn-custom {-->
+<!--      background-color: #00d9a5;-->
+<!--      border: none;-->
+<!--    }-->
+<!--    .btn-custom:hover {-->
+<!--      background-color: #007b67;-->
+<!--    }-->
+
+<!--    /* Gradient Buttons */-->
+<!--    .btn-gradient {-->
+<!--      background: linear-gradient(to right, #6a11cb, #2575fc);-->
+<!--      color: #fff;-->
+<!--      border: none;-->
+<!--      padding: 12px 20px;-->
+<!--      border-radius: 30px;-->
+<!--      font-size: 1.1rem;-->
+<!--      font-weight: bold;-->
+<!--      transition: all 0.3s ease;-->
+<!--      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
+<!--    }-->
+<!--    .btn-gradient:hover {-->
+<!--      background: linear-gradient(to right, #2575fc, #6a11cb);-->
+<!--      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);-->
+<!--      transform: scale(1.05);-->
+<!--    }-->
+
+<!--    .modal-content {-->
+<!--      border-radius: 15px;-->
+<!--      border: none;-->
+<!--      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);-->
+<!--    }-->
+<!--    .modal-header {-->
+<!--      border-bottom: 2px solid #6a11cb;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--    <div class="container-fluid">-->
+<!--      <a class="navbar-brand d-flex align-items-center" href="#">-->
+<!--        <div class="logo me-2">-->
+<!--          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white;">-->
+<!--        </div>-->
+<!--        Health Care Center-->
+<!--      </a>-->
+<!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+<!--      <div class="collapse navbar-collapse" id="navbarContent">-->
+<!--        <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="/developer">Developer</a></li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>-->
+<!--        </ul>-->
+<!--        <form class="d-flex" role="search">-->
+<!--          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--          <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--        </form>-->
+<!--        <button id="modeToggle" class="btn-toggle ms-3" title="Toggle Day/Night Mode">&#9788;</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </nav>-->
+
+<!--  <div class="container container-form">-->
+<!--    <h1 class="text-center text-green">Health Care Center</h1>-->
+<!--    <form action="/predict" method="post">-->
+<!--      <div class="mb-3">-->
+<!--        <label for="symptoms" class="form-label">Select Symptoms:</label>-->
+<!--        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="Type symptoms such as itching, sleeping, aching, etc.">-->
+<!--      </div>-->
+<!--      <button type="button" id="startSpeechRecognition" class="btn btn-custom">Start Speech Recognition</button>-->
+<!--      <div id="transcription" class="mt-3"></div>-->
+<!--      {% if message %}-->
+<!--        <p>{{ message }}</p>-->
+<!--      {% endif %}-->
+<!--      <button type="submit" class="btn btn-danger btn-lg mt-3">Predict</button>-->
+<!--    </form>-->
+<!--  </div>-->
+
+<!--  {% if predicted_disease %}-->
+<!--  <h1 class="text-center my-4">Our AI System Results</h1>-->
+<!--  <div class="container text-center">-->
+<!--    <div class="row g-3 justify-content-center">-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#diseaseModal">Disease</button>-->
+<!--      </div>-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#descriptionModal">Description</button>-->
+<!--      </div>-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#precautionModal">Precaution</button>-->
+<!--      </div>-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#medicationsModal">Medications</button>-->
+<!--      </div>-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#workoutsModal">Workouts</button>-->
+<!--      </div>-->
+<!--      <div class="col-12 col-md-6 col-lg-4">-->
+<!--        <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#dietsModal">Diets</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  {% endif %}-->
+
+<!--  <script>-->
+<!--    const modeToggle = document.getElementById('modeToggle');-->
+<!--    const body = document.body;-->
+<!--    const navbar = document.querySelector('.navbar');-->
+<!--    const formContainer = document.querySelector('.container-form');-->
+
+<!--    modeToggle.addEventListener('click', () => {-->
+<!--      body.classList.toggle('day-mode');-->
+<!--      navbar.classList.toggle('day-mode');-->
+<!--      formContainer.classList.toggle('day-mode');-->
+<!--      modeToggle.classList.toggle('day-mode');-->
+
+<!--      modeToggle.innerHTML = body.classList.contains('day-mode') ? '&#9789;' : '&#9788;';-->
+<!--    });-->
+<!--  </script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
