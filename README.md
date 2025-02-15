@@ -15,6 +15,9 @@ This is a Flask-based web application that predicts diseases based on user-input
   ![Screenshot 2025-02-15 235900](https://github.com/user-attachments/assets/fff9194f-41c0-40e3-a835-7963313f37a2)
   ![Screenshot 2025-02-15 235914](https://github.com/user-attachments/assets/a85e607e-e114-43dc-a3e4-569a074f07ab)
   ![Screenshot 2025-02-15 235926](https://github.com/user-attachments/assets/5f8d50bc-1842-4c04-930d-1a37344ed676),![Screenshot 2025-02-16 000004](https://github.com/user-attachments/assets/b5f92516-7fe6-431f-988b-4e320f09f1bf)
+  ![Screenshot 2025-02-16 001117](https://github.com/user-attachments/assets/718cda35-bbdd-4655-b142-2db7cb00d413), ![Screenshot 2025-02-16 001135](https://github.com/user-attachments/assets/ba359371-ea40-4c4e-99ba-758867f753a7)
+
+
   
 ## Tech Stack
 - **Backend**: Flask, Python
