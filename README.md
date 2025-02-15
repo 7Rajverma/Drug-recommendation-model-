@@ -28,6 +28,39 @@ Ensure you have the following installed:
 
 ### Steps
 1. Clone this repository:
-   ```sh
    git clone https://github.com/your-username/repository-name.git
    cd repository-name
+   
+2.Install dependencies:
+   pip install -r requirements.txt
+   Download or place the necessary dataset files inside the datasets folder.
+   Ensure the trained model (svm.pkl) is placed inside the model directory.
+   
+3.Download or place the necessary dataset files inside the datasets folder.
+
+4.Ensure the trained model (svm.pkl) is placed inside the model directory.
+
+5.Run the Flask application:
+   python app.py
+
+6.Access the application at http://127.0.0.1:5000/.
+
+### API Endpoints
+  • / - Home page (disease prediction form)
+  • /predict - Handles symptom input and returns a predicted disease
+  • /chat_bot - Chatbot page
+  • /chat - API endpoint for chatbot interaction
+  • /about, /contact, /developer, /blog - Static informational pages
+
+### Environment Variables
+      You need to set up the API key for Google Generative AI: export GOOGLE_API_KEY="your-api-key-here"
+      Alternatively, modify app.py and replace api_key="your-api-key-here".
+
+### Contributing
+      Contributions are welcome! Please open an issue or submit a pull request.
+
+### License
+      This project is licensed under the MIT License.
+
+
+
