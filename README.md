@@ -7,6 +7,21 @@ This is a Flask-based web application that predicts diseases based on user-input
 - **Symptom Database**: Uses a dataset containing disease descriptions, precautions, medications, diets, and workouts.
 - **AI Chatbot**: Integrated chatbot powered by Google Gemini AI for general health-related queries.
 - **Flask Web App**: Built with Flask and deployed using Vercel.
+- ![Screenshot 2025-02-15 235732](https://github.com/user-attachments/assets/f1d5b854-643c-4ea7-80c1-1128163fd7bd)
+- ![Screenshot 2025-02-15 235747](https://github.com/user-attachments/assets/24694f15-b090-437a-bb04-01c2938aa6d9)
+- ![Screenshot 2025-02-15 235832](https://github.com/user-attachments/assets/deb22284-5ad5-4492-a89d-3eedb07d1a86)
+  ![Screenshot 2025-02-15 235846](https://github.com/user-attachments/assets/7efbaf40-a40e-4b9c-9ea0-0ff2450b1268)
+  ![Screenshot 2025-02-15 235900](https://github.com/user-attachments/assets/fff9194f-41c0-40e3-a835-7963313f37a2)
+  ![Screenshot 2025-02-15 235914](https://github.com/user-attachments/assets/a85e607e-e114-43dc-a3e4-569a074f07ab)
+  ![Screenshot 2025-02-15 235926](https://github.com/user-attachments/assets/5f8d50bc-1842-4c04-930d-1a37344ed676),![Screenshot 2025-02-16 000004](https://github.com/user-attachments/assets/b5f92516-7fe6-431f-988b-4e320f09f1bf)
+
+
+
+
+
+
+
+
 
 ## Tech Stack
 - **Backend**: Flask, Python
