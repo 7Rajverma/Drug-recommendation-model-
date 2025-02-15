@@ -1,23 +1,33 @@
-The repository Drug Recommendation Model implements a machine learning model designed to recommend drugs based on patient information. The model uses a dataset with features such as age, gender, blood pressure, cholesterol levels, and patient conditions to predict the most suitable drug category. This approach demonstrates how data-driven methods can assist in healthcare decision-making.
+# Disease Prediction and Chatbot Web App
 
-Dataset:
+This is a Flask-based web application that predicts diseases based on user-inputted symptoms and provides additional information such as precautions, medications, diets, and workouts. The application also features an AI-powered chatbot.
 
-Contains patient-specific features like age, gender, cholesterol levels (normal/high), and blood pressure levels (low/normal/high).
-The target variable is the drug category, representing the type of drug recommended for each patient.
-Model Implementation:
+## Features
+- **Disease Prediction**: Predicts diseases based on symptoms using an SVM model.
+- **Symptom Database**: Uses a dataset containing disease descriptions, precautions, medications, diets, and workouts.
+- **AI Chatbot**: Integrated chatbot powered by Google Gemini AI for general health-related queries.
+- **Flask Web App**: Built with Flask and deployed using Vercel.
 
-A classification algorithm (likely Decision Tree Classifier, as commonly used for such problems) is used to predict the drug category.
-The model learns patterns in the data, associating patient features with specific drug categories.
-Workflow:
+## Tech Stack
+- **Backend**: Flask, Python
+- **Frontend**: HTML, CSS (via templates)
+- **Machine Learning**: SVM (Support Vector Machine) model
+- **AI Model**: Google Gemini
+- **Deployment**: Vercel
 
-Data Preprocessing: Encodes categorical features and prepares the data for training and testing.
-Training and Testing: Splits the data to evaluate model accuracy and avoid overfitting.
-Visualization: Uses tools like decision tree plots to explain the logic behind predictions.
-Model Performance:
+## Installation
 
-Assessed using metrics such as accuracy and confusion matrix to measure how well the model predicts drug recommendations.
-Real-World Applicability:
+### Prerequisites
+Ensure you have the following installed:
+- Python 3.x
+- Flask
+- Pandas
+- NumPy
+- Pickle
+- Google Generative AI SDK (`google-generativeai`)
 
-Demonstrates a simplified version of how healthcare professionals might use AI/ML models to assist in prescribing medications.
-Can be further developed to include more nuanced medical data and drug interactions.
-This project showcases the power of machine learning in healthcare, providing a foundation for developing more advanced systems for personalized medicine.
+### Steps
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/your-username/repository-name.git
+   cd repository-name
