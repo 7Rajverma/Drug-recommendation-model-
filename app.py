@@ -1,11 +1,12 @@
-from flask import Flask, request, render_template, jsonify  # Import jsonify
+from flask import Flask, request, render_template, jsonify, redirect # Import jsonify
 import numpy as np
 import pandas as pd
 import pickle
+import mysql.connector
 
 #______________________________________________Chatbot-------------------------------
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyCEiennH_zopV9KYw8cAKka-T8VpgPgwQQ")
+genai.configure(api_key="AIzaSyCRRzw795UUrRg1WlG_L0ezz2L1-cpmtkk")
 generation_config = {
     "temperature": 1,
     "top_p": 0.95,
@@ -53,7 +54,7 @@ def helper(dis):
     die = diets[diets['Disease'] == dis]['Diet']
     die = [die for die in die.values]
 
-    wrkout = workout[workout['disease'] == dis] ['workout']
+    wrkout = workout[workout['disease'] == dis]['workout']
 
 
     return desc,pre,med,die,wrkout
@@ -75,7 +76,9 @@ def get_predicted_value(patient_symptoms):
 # creating routes========================================
 
 
-@app.route("/")
+
+
+@app.route("/index")
 def index():
     return render_template("index.html")
 
@@ -109,16 +112,16 @@ def home():
 
 
 
-# about view funtion and path
+# about view function and path
 @app.route('/about')
 def about():
     return render_template("about.html")
-# contact view funtion and path
+# contact view function and path
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
 
-# developer view funtion and path
+# developer view function and path
 @app.route('/developer')
 def developer():
     return render_template("developer.html")
@@ -133,7 +136,7 @@ def blog():
 # ___________________________________________________________________Chat bot____________________________________________
 
 
-@app.route("/")
+@app.route("/chat_bot")
 def chat_bot():
     return render_template("chat_bot.html")
 
@@ -146,6 +149,53 @@ def chat():
     return jsonify({"reply": response.text})
 
 
+
+# ___________________________________________________________________Login Page____________________________________________
+
+
+
+
+conn = mysql.connector.connect(host='localhost', user='root', password='', database='user_data_med')
+cursor = conn.cursor()
+
+@app.route("/")
+def login():
+    return render_template("login.html")
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
+@app.route('/login_validation', methods=['POST'])
+def login_validation():
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    cursor.execute("SELECT * FROM user_data WHERE email = %s AND password = %s", (email, password))
+
+    user = cursor.fetchall()
+    if len(user)> 0:
+        return redirect("/index")
+    else:
+        return redirect("/")
+
+@app.route('/add_user', methods=['POST'])
+def add_user():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    number = request.form.get('number')
+    dob = request.form.get('dob')
+    gender = request.form.get('gender')
+
+    cursor.execute("""
+        INSERT INTO user_data (name, email, password, number, dob, gender) 
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """, (name, email, password, number, dob, gender))
+
+    conn.commit()
+    return redirect("/")
 
 
 
